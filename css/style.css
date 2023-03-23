@@ -1,0 +1,120 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --hue-color: 225;
+  --first-color: hsl(var(--hue-color), 48%, 35%);
+  --title-color: hsl(var(--hue-color), 48%, 22%);
+  --text-color: hsl(var(--hue-color), 12%, 35%);
+  --body-color: hsl(var(--hue-color), 49%, 98%);
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --z-modal: 1000;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  --max-width: 1170px;
+  --padding: 1rem;
+  width: min(100% - var(--padding) * 2, var(--max-width));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.title {
+  text-align: center;
+  color: var(--title-color);
+  font-size: 2rem;
+}
+
+.modal {
+  position: fixed;
+  z-index: var(--z-modal);
+  display: none;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  inset: 0;
+}
+.modal__content {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background-color: azure;
+  border-radius: 3px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+.modal__close {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  transition: var(--transition-time);
+}
+.modal__close-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--first-color);
+}
+.modal__close:hover .modal__close-icon {
+  fill: red;
+}
+.modal__close:focus-visible {
+  outline-color: green;
+}
+.modal__title {
+  margin-bottom: var(--mb-1-5);
+  font-weight: var(--fw-bold);
+  font-size: var(--h3-font-size);
+}/*# sourceMappingURL=style.css.map */
